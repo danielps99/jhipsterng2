@@ -1,0 +1,39 @@
+
+<div *ngIf="pedido">
+    <h2><span>Pedido</span> {{pedido.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Vendedor</span></dt>
+        <dd>
+            <span>{{pedido.vendedor}}</span>
+        </dd>
+        <dt><span>Data</span></dt>
+        <dd>
+            <span>{{pedido.data | date:'medium'}}</span>
+        </dd>
+        <dt><span>Valor Total</span></dt>
+        <dd>
+            <span>{{pedido.valorTotal}}</span>
+        </dd>
+        <dt><span>Consumidor</span></dt>
+        <dd>
+            <div *ngIf="pedido.consumidor">
+                <a [routerLink]="['/pessoa', pedido.consumidor?.id]">{{pedido.consumidor?.nome}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'pedido/'+ pedido.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,22 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "9",
+            "fieldValidateRulesMaxlength": "127"
+        }
+    ],
+    "changelogDate": "20170314182203",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "pessoa",
+    "pagination": "pagination"
+}

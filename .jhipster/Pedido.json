@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "consumidor",
+            "otherEntityName": "pessoa",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "nome"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "vendedor",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "15"
+        },
+        {
+            "fieldName": "data",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "valorTotal",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "changelogDate": "20170314190110",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "pedido",
+    "pagination": "pagination"
+}
